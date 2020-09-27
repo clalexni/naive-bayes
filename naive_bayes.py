@@ -1,6 +1,7 @@
 #!/usr/bin/env python3.6
 import sys
 from itertools import islice
+import math
 
 
 class DataSet:
@@ -85,8 +86,34 @@ def stdout(prob, cond_prob, labels):
       index += 1
     print()
 
-  
-  
+def argmax(prob, cond_prob, example):
+  """
+  return argmax aka class value
+  """
+  c, lv = None, float('-inf') # c is class
+  for (k, v) in prob.items():
+    value, index = 0, 0
+    for attr_value in example[0:-1]:
+      value += math.log10(cond_prob[k][index][attr_value])
+      index += 1
+    value += math.log10(prob[k])
+    if value > lv:
+      lv = value
+      c = k
+  return c
+
+
+def test_accuracy(prob, cond_prob, test_examples):
+  """
+  test the learning result using testing set and return accuracy
+  """
+
+  count = 0
+  for ex in test_examples:
+    if ex[-1] == argmax(prob, cond_prob, ex):
+      count += 1
+  return count/len(test_examples) # return accuracy
+
 
 if __name__ == '__main__':
   train = sys.argv[1]
@@ -98,4 +125,10 @@ if __name__ == '__main__':
   prob, cond_prob = naive_bayes_learner(train_ds)
   stdout(prob, cond_prob, train_ds.col_names)
 
+  print('\nAccuracy on training set (' + str(len(examples)) +
+        '): ' + '{:.2%}'.format(test_accuracy(prob, cond_prob, examples)))
+
+  test_examples = parse_data(test)[1]
+  print('Accuracy on test set (' + str(len(test_examples)) +
+        '): ' + '{:.2%}'.format(test_accuracy(prob, cond_prob, test_examples)))
 
