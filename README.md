@@ -29,7 +29,7 @@ chmod u+x main.py
 - tested on macos/Linux
 
 
-## Personal Note: Big Picture Thinking
+## Personal Note: 
 - count instances of each class value in col_values[-1]
 - count instances of attribute value given a class value in col_values[i] from i = 0 to -2
 - translate count to probability or cond prob
