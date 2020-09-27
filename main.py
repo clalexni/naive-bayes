@@ -3,7 +3,6 @@ import sys
 from itertools import islice
 import math
 
-
 class DataSet:
   """
     dataset fields:
@@ -19,6 +18,7 @@ class DataSet:
     self.col_indices = list(range(len(self.examples[0])))
     self.attr_indices = [i for i in self.col_indices[:-1]]
     self.col_values = list(map(lambda x: set(x), zip(*self.examples)))
+
 
 def naive_bayes_learner(dataset):
   """
@@ -52,6 +52,7 @@ def naive_bayes_learner(dataset):
 
   return naive_bayes_learning(dataset.examples, dataset.col_values) # return learning result
 
+
 def parse_data(input_file):
   """ 
   return a list of column names and an examples matrix
@@ -61,6 +62,7 @@ def parse_data(input_file):
     col_names = data[0].split()
     examples = [line.split() for line in islice(data, 1, len(data))]
     return col_names, examples
+
 
 def stdout(prob, cond_prob, labels):
   """
@@ -75,6 +77,7 @@ def stdout(prob, cond_prob, labels):
               '{:.2f}'.format(A[k]), end=' ')
       index += 1
     print()
+
 
 def argmax(prob, cond_prob, example):
   """
