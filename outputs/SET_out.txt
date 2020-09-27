@@ -1,0 +1,5 @@
+P(class=1)=0.28 P(wesley=0|class)=0.65 P(wesley=1|class)=0.35 P(romulan=0|class)=0.51 P(romulan=1|class)=0.49 P(poetry=1|class)=0.61 P(poetry=0|class)=0.39 P(honor=1|class)=0.66 P(honor=0|class)=0.34 P(tea=1|class)=0.71 P(tea=0|class)=0.29 P(barclay=1|class)=0.36 P(barclay=0|class)=0.64 
+P(class=0)=0.72 P(wesley=0|class)=0.46 P(wesley=1|class)=0.54 P(romulan=0|class)=0.50 P(romulan=1|class)=0.50 P(poetry=1|class)=0.45 P(poetry=0|class)=0.55 P(honor=1|class)=0.46 P(honor=0|class)=0.54 P(tea=1|class)=0.43 P(tea=0|class)=0.57 P(barclay=1|class)=0.52 P(barclay=0|class)=0.48 
+
+Accuracy on training set (800): 81.12%
+Accuracy on test set (203): 77.83%
