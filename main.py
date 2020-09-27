@@ -9,11 +9,7 @@ class DataSet:
     dataset fields:
     d.examples      An example matrix. It is basically a list of examples, 
                     each example is a list of attribute values + class value
-    d.col_indices   A list of indices that is corresponded to a column of the 
-                    examples matrix
     d.col_names     A list of name (label) corresponding to the matrix's column
-    d.attr_indices  Same as col_indices but without the last column (class).
-                    In another word, each attribute is a column index
     d.col_values    A list of list: each sublist is the set of possible values
                     corresponding to an attribute or class
   """
@@ -52,15 +48,9 @@ def naive_bayes_learner(dataset):
     for c in prob:
       count = prob[c]
       prob[c] = count/len(examples)
-          
-    #print('cond_prob')
-    #for (k, v) in cond_prob.items():
-    #  print(k, ': ', v)
-    #print('prob')
-    #for (k, v) in prob.items():
-    #  print(k,': ', v)
     return prob, cond_prob
-  return naive_bayes_learning(dataset.examples, dataset.col_values)
+
+  return naive_bayes_learning(dataset.examples, dataset.col_values) # return learning result
 
 def parse_data(input_file):
   """ 
