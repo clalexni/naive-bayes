@@ -102,7 +102,7 @@ def test_accuracy(prob, cond_prob, test_examples):
   """
   count = 0
   for ex in test_examples:
-    if ex[-1] == argmax(prob, cond_prob, ex):
+    if ex[-1] == argmax(prob, cond_prob, ex): #argmax
       count += 1
   return count/len(test_examples) # return accuracy
 
