@@ -1,5 +1,5 @@
 # naive bayes classification
-- please go to [my github repository] for formatted README and output files and more
+- please go to [my github repository](https://github.com/clalexni/naive-bayes) for formatted README and output files and more
 
 ## Goal
 Learn from data using naive bayes classifier
