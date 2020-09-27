@@ -1,7 +1,8 @@
 # naive bayes classification
 
 ## Goal
-Learn from data using naive bayes classifier
+- Learn from data using naive bayes classifier
+- output learn result and accuracy using test set
 
 ## Requirements
 - install Python 3.6
@@ -11,24 +12,24 @@ Learn from data using naive bayes classifier
   - the second line takes two input of data file path (./data/train.dat for instance)
     - the first input is the training set and the second input should be the test set
 ~~~
-chmod u+x main.py
+chmod u+x naive_bayes.py
 ~~~
 ~~~
-./main.py [input1] [input2]
+./naive_bayes.py [input1] [input2]
 ~~~
 
 - for instance: 
 ~~~
-./main.py data/train.dat data/test.dat
+./naive_bayes.py data/train.dat data/test.dat
 ~~~
 - use the following command to redirect output, for example:
 ~~~
-./main.py data/train.dat data/test.dat > out.txt
+./naive_bayes.py data/train.dat data/test.dat > out.txt
 ~~~
 - tested on macos/Linux
 
 
-## Personal Note: 
+## Personal Notes: 
 - what is naive bayes?
   - use conditional independence assumption to do classification
 - what to keep track of?
