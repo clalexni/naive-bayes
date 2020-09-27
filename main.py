@@ -71,7 +71,7 @@ def stdout(prob, cond_prob, labels):
     index = 0
     for A in v:
       for k in A.keys():
-        print('P(' + labels[index] + '=' + k + '|' + labels[-1] + ')=' + 
+        print('P(' + labels[index] + '=' + k + '|' + c  + ')=' + 
               '{:.2f}'.format(A[k]), end=' ')
       index += 1
     print()
@@ -97,7 +97,6 @@ def test_accuracy(prob, cond_prob, test_examples):
   """
   test the learning result using testing set and return accuracy
   """
-
   count = 0
   for ex in test_examples:
     if ex[-1] == argmax(prob, cond_prob, ex):
