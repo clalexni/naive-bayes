@@ -11,19 +11,19 @@ Learn from data using naive bayes classifier
   - the second line takes two input of data file path (./data/train.dat for instance)
   - the first input is the training set and the second input should be the test set
 ~~~
-chmod u+x naive_bayes.py
+chmod u+x main.py
 ~~~
 ~~~
-./naive_bayes.py [input1] [input2]
+./main.py [input1] [input2]
 ~~~
 
 - for instance: 
 ~~~
-./naive_bayes.py data/train.dat data/test.dat
+./main.py data/train.dat data/test.dat
 ~~~
 - use the following command to redirect output, for example:
 ~~~
-./naive_bayes.py data/train.dat data/test.dat > out.txt
+./main.py data/train.dat data/test.dat > out.txt
 ~~~
 - tested on macos/Linux
 
