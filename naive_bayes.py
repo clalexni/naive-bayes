@@ -15,8 +15,6 @@ class DataSet:
   def __init__(self, examples=None, col_names=None):
     self.examples = examples
     self.col_names = col_names
-    self.col_indices = list(range(len(self.examples[0])))
-    self.attr_indices = [i for i in self.col_indices[:-1]]
     self.col_values = list(map(lambda x: set(x), zip(*self.examples)))
 
 
@@ -84,7 +82,7 @@ def argmax(prob, cond_prob, example):
   return argmax aka class value
   """
   c, lv = None, float('-inf') # c is class
-  for (k, v) in prob.items():
+  for (k, _) in prob.items():
     value, index = 0, 0
     for attr_value in example[0:-1]:
       value += math.log10(cond_prob[k][index][attr_value])
